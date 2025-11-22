@@ -1,5 +1,4 @@
 export * from './Achievement.js';
-export * from './BaseModifier.js';
 export * from './BaseReply.js';
 export * from './counting.js';
 export * from './items.js';

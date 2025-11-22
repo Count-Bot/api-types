@@ -1,24 +1,12 @@
-import type { Modifiers } from '../utils/BaseModifier.js';
-
 export interface APICountingChannelModifiers {
-  /**
-   * The ObjectID of the channel modifiers
-   */
-  id: string;
-  /**
-   * The ID of the channel these modifiers are for.
-   */
   channelId: string;
-  /**
-   * The Coin Boost modifier
-   */
-  coin: Modifiers<number>;
-  /**
-   * The Luck modifier
-   */
-  luck: Modifiers<number>;
-  /**
-   * The XP Boost modifier
-   */
-  xp: Modifiers<number>;
+  coinDefault: number;
+  coinValue: number;
+  coinEndsAt: string | null;
+  luckDefault: number;
+  luckValue: number;
+  luckEndsAt: string | null;
+  xpDefault: number;
+  xpValue: number;
+  xpEndsAt: string | null;
 }

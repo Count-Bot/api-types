@@ -1,8 +1,13 @@
 import { AchievementReward } from './Achievement.js';
+import { APIItem } from '../payloads/Item.js';
 
 export interface ItemDrop {
-  item: ItemString;
+  item: APIItem;
   result: ItemExecuteResult;
+}
+
+export interface UserInventoryEntry extends APIItem {
+  quantity: number;
 }
 
 export interface ItemExecuteResult {
@@ -14,11 +19,11 @@ export interface ItemExecuteResult {
   luck?: number;
   coins?: number;
   xp?: number;
-  item?: ItemString;
+  item?: APIItem;
 }
 
 export interface ItemUseResult {
-  inventory: ItemString[];
+  inventory: UserInventoryEntry[];
   result: ItemExecuteResult;
   achievement?: AchievementReward;
 }
@@ -51,7 +56,7 @@ export enum ItemType {
   LootCrate = 65536,
 }
 
-export type ShopItem = [ItemString, number];
+export type ShopItem = [APIItem, number];
 
 export const ITEM_STRINGS: Record<ItemType, ItemTypeString> = {
   [ItemType.Skip]: 'Skip',
