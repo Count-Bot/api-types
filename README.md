@@ -1,7 +1,3 @@
 # CountBot API Types
 
-Install the interfaces and types used across CountBot with `npm i -D @countbot/countbot-api-types`.
-
-# Generics
-
-The generic interfaces should take a `string` or a mongoose `Types.ObjectId`.
+To be used by the CountBot API, CountBot (Discord), and CountBot Website.

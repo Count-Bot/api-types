@@ -1,6 +1,6 @@
 {
-  "name": "@countbot/countbot-api-types",
-  "version": "6.3.1",
+  "name": "@countbot/api-types",
+  "version": "0.1.0",
   "description": "API types for CountBot",
   "author": {
     "name": "CountBot",
@@ -14,14 +14,13 @@
   },
   "homepage": "https://github.com/Count-Bot/countbot-api-types#readme",
   "devDependencies": {
-    "@eslint/js": "^9.27.0",
-    "@types/node": "^22.9.1",
-    "cross-env": "^7.0.3",
-    "eslint": "^9.16.0",
-    "eslint-formatter-pretty": "^5.0.0",
-    "eslint-plugin-import": "^2.31.0",
-    "globals": "^15.14.0",
+    "@eslint/js": "^9.39.1",
+    "eslint": "^9.39.1",
+    "eslint-formatter-pretty": "^7.0.0",
+    "eslint-plugin-import": "^2.32.0",
+    "globals": "^16.5.0",
     "prettier": "^3.5.3",
+    "rimraf": "^6.1.2",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.32.1"
   },
@@ -30,17 +29,31 @@
     "src"
   ],
   "exports": {
-    ".": {
-      "import": "./build/index.js",
-      "require": "./build/index.js",
-      "types": "./build/index.d.ts"
+    "./v1": {
+      "import": "./v1.js",
+      "require": "./v1.js",
+      "types": "./v1.d.ts"
+    },
+    "./payloads": {
+      "import": "./payloads/index.js",
+      "require": "./payloads/index.js",
+      "types": "./payloads/index.d.ts"
+    },
+    "./rest": {
+      "import": "./rest/index.js",
+      "require": "./rest/index.js",
+      "types": "./rest/index.d.ts"
+    },
+    "./utils": {
+      "import": "./utils/index.js",
+      "require": "./utils/index.js",
+      "types": "./utils/index.d.ts"
     }
   },
   "scripts": {
-    "build:node": "tsc",
-    "build:ci": "tsc --noEmit",
-    "format": "prettier --write . && eslint --fix --format=pretty src",
-    "lint": "prettier --check . && eslint --format=pretty src",
-    "prepare": "npm run build:node"
+    "build": "tsc",
+    "format": "prettier --write . && eslint --fix --format=pretty \"{payloads,rest,utils}/**/*.ts\" \"v1.{js,mjs,d.ts,*map}\"",
+    "lint": "prettier --check . && eslint --format=pretty \"{payloads,rest,utils}/**/*.{ts,js}\" \"v1.{js,mjs,d.ts,*map}\"",
+    "clean": "rimraf --glob \"{payloads,rest,utils}/**/*.{js,mjs,d.ts,*map}\" \"v1.{js,mjs,d.ts,*map}\""
   }
 }

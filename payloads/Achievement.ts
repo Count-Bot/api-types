@@ -16,6 +16,14 @@ export enum AchievementId {
   BotKiller = 'BOT_KILLER',
 }
 
+export interface AchievementResult {
+  id: AchievementId;
+  reward: {
+    coins: number;
+    xp: number;
+  };
+}
+
 export interface APIAchievement {
   id: string;
   /**
