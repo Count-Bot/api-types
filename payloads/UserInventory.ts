@@ -1,7 +1,9 @@
+import { ItemRarity, ItemType } from './Item.js';
+
 export interface APIUserInventory {
   id: string;
   userId: string;
-  type: string;
-  rarity: number;
+  type: ItemType;
+  rarity: ItemRarity;
   quantity: number;
 }

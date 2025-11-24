@@ -9,13 +9,13 @@ export enum ItemRarity {
 }
 
 export enum ItemType {
-  Skip = 'Skip',
-  Luck = 'Luck',
-  CoinBooster = 'CoinBooster',
-  XPBooster = 'XPBooster',
-  Lightning = 'Lightning',
-  Freeze = 'Freeze',
-  LootCrate = 'LootCrate',
+  Skip = 1,
+  Luck,
+  CoinBooster,
+  XPBooster,
+  Lightning,
+  Freeze,
+  LootCrate,
 }
 
 export interface APIItem {
