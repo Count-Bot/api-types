@@ -1,18 +1,19 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
+    "alwaysStrict": true,
+    "target": "es6",
     "lib": ["ESNext"],
-    "module": "CommonJS",
+    "module": "nodenext",
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "removeComments": false,
     "noImplicitAny": true,
     "noImplicitThis": true,
     "strictNullChecks": true,
     "declaration": true,
     "strictFunctionTypes": true,
-    "outDir": "./build",
-    "baseUrl": "./src/",
-    "rootDir": "./src/",
     "sourceMap": true,
     "skipLibCheck": true
   },
-  "include": ["./src/"]
+  "include": ["v1.ts", "payloads/**/*.ts", "rest/**/*.ts", "utils/**/*.ts"]
 }

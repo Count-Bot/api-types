@@ -1,2 +1,39 @@
+node_modules
+
 node_modules/
-build/
+
+# Custom ESLint rules
+.eslint-plugin-local/*
+!.eslint-plugin-local/index.ts
+!.eslint-plugin-local/tsconfig.json
+
+# Don't commit build outputs
+
+v*.js
+v*.*map
+v*.d.ts
+v*.mjs
+
+payloads/**/*.js
+payloads/**/*.map
+payloads/**/*.d.ts
+payloads/**/*.mjs
+
+rest/**/*.js
+rest/**/*.map
+rest/**/*.d.ts
+rest/**/*.mjs
+
+utils/**/*.js
+utils/**/*.map
+utils/**/*.d.ts
+utils/**/*.mjs
+
+# Don't commit generated docs
+tsdoc-metadata.json
+docs/*
+
+# macOS files
+.DS_Store
+
+.npmrc
