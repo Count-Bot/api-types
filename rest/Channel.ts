@@ -16,6 +16,9 @@ export interface RESTPatchAPIChannelJSONBody {
   achievementNotifications?: boolean;
   milestoneNotifications?: boolean;
   reactionsEnabled?: boolean;
-  correctEmoji?: string | null;
-  incorrectEmoji?: string | null;
+}
+
+export interface RESTPatchAPIChannelEmojisJSONBody {
+  incorrect?: string;
+  correct?: string;
 }
