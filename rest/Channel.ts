@@ -21,7 +21,7 @@ export interface RESTPatchAPIChannelJSONBody {
 export interface RESTPatchAPIChannelReactionsJSONBody {
   enabled: boolean;
   emojis?: {
-    incorrect?: string;
-    correct?: string;
+    incorrect?: string | null;
+    correct?: string | null;
   };
 }
