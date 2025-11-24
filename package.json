@@ -1,5 +1,5 @@
 {
-  "name": "@countbot/api-types",
+  "name": "@count-bot/api-types",
   "version": "0.1.0",
   "description": "API types for CountBot",
   "author": {
@@ -9,10 +9,14 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Count-Bot/countbot-api-types/issues",
+    "url": "https://github.com/Count-Bot/api-types/issues",
     "email": "realcountbot@gmail.com"
   },
-  "homepage": "https://github.com/Count-Bot/countbot-api-types#readme",
+  "homepage": "https://github.com/Count-Bot/api-types#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Count-Bot/api-types.git"
+  },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
     "eslint": "^9.39.1",
