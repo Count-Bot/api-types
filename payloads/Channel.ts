@@ -1,3 +1,4 @@
+import { Reward } from '../utils/reward.js';
 import { AchievementResult } from './Achievement.js';
 import { ItemDropResult } from './Item.js';
 
@@ -13,10 +14,7 @@ export interface CountResult {
   reaction?: string | null;
   suddenDeath?: boolean;
   itemDrop?: ItemDropResult;
-  milestone?: {
-    coins: number;
-    xp: number;
-  };
+  milestone?: Reward;
 }
 
 export const CountingModes = [

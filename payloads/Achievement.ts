@@ -1,3 +1,5 @@
+import { Reward } from '../utils/reward.js';
+
 export enum AchievementId {
   FirstCount = 'FIRST_COUNT',
   CounterAmateur = 'COUNTER_AMATEUR',
@@ -18,10 +20,7 @@ export enum AchievementId {
 
 export interface AchievementResult {
   id: AchievementId;
-  reward: {
-    coins: number;
-    xp: number;
-  };
+  reward: Reward;
 }
 
 export interface APIAchievement {
