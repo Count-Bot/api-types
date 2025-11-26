@@ -1,5 +1,6 @@
 export * from './Achievement.js';
 export * from './Channel.js';
+export * from './ChannelGoal.js';
 export * from './ChannelModifiers.js';
 export * from './Guild.js';
 export * from './Item.js';
