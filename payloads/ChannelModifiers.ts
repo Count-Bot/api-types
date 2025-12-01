@@ -1,12 +1,18 @@
-export interface APICountingChannelModifiers {
+export interface APIChannelModifiers {
   channelId: string;
-  coinDefault: number;
-  coinValue: number;
-  coinEndsAt: string | null;
-  luckDefault: number;
-  luckValue: number;
-  luckEndsAt: string | null;
-  xpDefault: number;
-  xpValue: number;
-  xpEndsAt: string | null;
+  coins: {
+    default: number;
+    value: number;
+    endsAt: string | null;
+  };
+  luck: {
+    default: number;
+    value: number;
+    endsAt: string | null;
+  };
+  xp: {
+    default: number;
+    value: number;
+    endsAt: string | null;
+  };
 }
