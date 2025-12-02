@@ -1,5 +1,7 @@
 export interface APICountingUserModifiers {
   userId: string;
-  freezeValue: boolean;
-  freezeEndsAt: string | null;
+  freeze: {
+    value: boolean;
+    endsAt: number | null;
+  };
 }
