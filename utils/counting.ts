@@ -1,23 +1,23 @@
 import { CountingMode } from '../v1.js';
 
 const multiples = {
-  THREE: 3,
-  FOUR: 4,
-  FIVE: 5,
-  SIX: 6,
-  SEVEN: 7,
-  EIGHT: 8,
-  NINE: 9,
-  TEN: 10,
+  [CountingMode.Three]: 3,
+  [CountingMode.Four]: 4,
+  [CountingMode.Five]: 5,
+  [CountingMode.Six]: 6,
+  [CountingMode.Seven]: 7,
+  [CountingMode.Eight]: 8,
+  [CountingMode.Nine]: 9,
+  [CountingMode.Ten]: 10,
 };
 
 export function getExpectedCount(current: number, mode: CountingMode) {
   switch (mode) {
-    case 'DEFAULT': {
+    case CountingMode.Default: {
       return current + 1;
     }
 
-    case 'EVEN': {
+    case CountingMode.Even: {
       if (current % 2 === 0) {
         return current + 2;
       }
@@ -25,7 +25,7 @@ export function getExpectedCount(current: number, mode: CountingMode) {
       return current + 1;
     }
 
-    case 'ODD': {
+    case CountingMode.Odd: {
       if (current % 2 === 0) {
         return current + 1;
       }
@@ -33,7 +33,7 @@ export function getExpectedCount(current: number, mode: CountingMode) {
       return current + 2;
     }
 
-    case 'PRIME': {
+    case CountingMode.Prime: {
       return getNextPrime(current);
     }
 
@@ -44,7 +44,7 @@ export function getExpectedCount(current: number, mode: CountingMode) {
 
 export function getNextMultiple(
   count: number,
-  mode: Exclude<CountingMode, 'DEFAULT' | 'ODD' | 'EVEN' | 'PRIME'>,
+  mode: Exclude<CountingMode, CountingMode.Default | CountingMode.Odd | CountingMode.Even | CountingMode.Prime>,
 ): number {
   return count + (multiples[mode] - (count % multiples[mode]));
 }
