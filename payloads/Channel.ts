@@ -2,20 +2,33 @@ import { Reward } from '../utils/reward.js';
 import { AchievementResult } from './Achievement.js';
 import { ItemDropResult } from './Item.js';
 
-export interface CountResult {
-  count: number;
-  mode: CountingMode;
-  valid: boolean;
+export interface BaseCountResult {
+  channelId: string;
+  messageId: string;
+  userId: string;
+  delete?: boolean;
+  reaction?: string | null;
   achievement?: {
     notification: boolean;
     achievements: AchievementResult[];
   };
-  delete?: boolean;
-  reaction?: string | null;
-  suddenDeath?: boolean;
   itemDrop?: ItemDropResult;
-  milestone?: Reward;
 }
+
+export interface WithCountAndModeCountResult extends BaseCountResult {
+  count: number;
+  mode: CountingMode;
+}
+
+export interface SuddenDeathCountResult extends WithCountAndModeCountResult {
+  suddenDeath: true;
+}
+
+export interface MilestoneCountResult extends WithCountAndModeCountResult {
+  milestone: Reward;
+}
+
+export type CountResult = BaseCountResult | SuddenDeathCountResult | MilestoneCountResult;
 
 export enum CountingMode {
   Default,
