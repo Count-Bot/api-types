@@ -7,6 +7,7 @@ export interface RESTPostAPIChannelJSONBody {
 
 export interface RESTPatchAPIChannelJSONBody {
   mode?: CountingMode;
+  inputFormMask?: number;
   chatting?: boolean;
   itemDrop?: boolean;
   itemUse?: boolean;

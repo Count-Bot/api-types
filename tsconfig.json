@@ -15,5 +15,6 @@
     "sourceMap": true,
     "skipLibCheck": true
   },
-  "include": ["v1.ts", "payloads/**/*.ts", "rest/**/*.ts", "utils/**/*.ts"]
+  "include": ["v1.ts", "payloads/**/*.ts", "rest/**/*.ts", "utils/**/*.ts"],
+  "exclude": ["**/*.test.ts", "**/*.spec.ts"]
 }

@@ -32,6 +32,14 @@ export enum CountingMode {
   Prime,
 }
 
+export enum CountInputForm {
+  PlainDecimal = 1,
+  ReverseDecimal = 2,
+  Hex = 4,
+  Binary = 8,
+  Scientific = 16,
+}
+
 export interface APIChannel {
   id: string;
   guildId: string;
@@ -41,6 +49,7 @@ export interface APIChannel {
   itemsUsed: number;
   enabled: boolean;
   mode: CountingMode;
+  inputFormMask: number;
   chatting: boolean;
   itemDrop: boolean;
   itemUse: boolean;

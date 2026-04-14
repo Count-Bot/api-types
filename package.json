@@ -1,6 +1,6 @@
 {
   "name": "@count-bot/api-types",
-  "version": "0.13.0",
+  "version": "0.15.0",
   "description": "API types for CountBot",
   "author": {
     "name": "CountBot",
@@ -25,6 +25,7 @@
     "globals": "^16.5.0",
     "prettier": "^3.5.3",
     "rimraf": "^6.1.2",
+    "vitest": "^2.1.8",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.32.1"
   },
@@ -56,8 +57,11 @@
   },
   "scripts": {
     "build": "tsc",
+    "prepublishOnly": "npm run build",
     "format": "prettier --write . && eslint --fix --format=pretty \"{payloads,rest,utils}/**/*.ts\" \"v1.{js,mjs,d.ts,*map}\"",
     "lint": "prettier --check . && eslint --format=pretty \"{payloads,rest,utils}/**/*.{ts,js}\" \"v1.{js,mjs,d.ts,*map}\"",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "clean": "rimraf --glob \"{payloads,rest,utils}/**/*.{js,mjs,d.ts,*map}\" \"v1.{js,mjs,d.ts,*map}\""
   }
 }
