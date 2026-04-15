@@ -10,6 +10,7 @@ import {
   getFirstCount,
   getExpectedCount,
   hasCountInputForm,
+  isValidCountInputFormMask,
   moveCountBackward,
   moveCountForward,
   parseCountInputCandidates,
@@ -73,6 +74,14 @@ describe('input form masks', () => {
         CountInputForm.Binary |
         CountInputForm.Scientific,
     );
+  });
+
+  it('validates mask policy consistently', () => {
+    expect(isValidCountInputFormMask(undefined)).toBe(false);
+    expect(isValidCountInputFormMask(0)).toBe(false);
+    expect(isValidCountInputFormMask(99)).toBe(false);
+    expect(isValidCountInputFormMask(CountInputForm.ReverseDecimal)).toBe(true);
+    expect(isValidCountInputFormMask(CountInputForm.PlainDecimal)).toBe(true);
   });
 });
 

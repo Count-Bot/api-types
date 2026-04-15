@@ -124,11 +124,25 @@ const countInputParsers: Record<number, CountInputParser> = {
 };
 
 function normalizeInputFormMask(inputFormMask?: number): number {
-  if (!Number.isInteger(inputFormMask) || inputFormMask === undefined || inputFormMask <= 0) {
+  if (!isValidCountInputFormMask(inputFormMask)) {
     return DefaultCountInputFormMask;
   }
 
   return inputFormMask;
+}
+
+export function isValidCountInputFormMask(inputFormMask: number | undefined): inputFormMask is number {
+  if (!Number.isInteger(inputFormMask) || inputFormMask === undefined || inputFormMask <= 0) {
+    return false;
+  }
+
+  const hasUnknownInputFormBits = (inputFormMask & ~AllCountInputFormMask) !== 0;
+
+  if (hasUnknownInputFormBits) {
+    return false;
+  }
+
+  return true;
 }
 
 export function hasCountInputForm(inputFormMask: number, form: number): boolean {
