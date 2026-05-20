@@ -24,7 +24,6 @@ export interface AchievementResult {
 }
 
 export interface APIAchievement {
-  id: string;
   /**
    * The Discord Snowflake ID of the user who earned the achievement.
    */
