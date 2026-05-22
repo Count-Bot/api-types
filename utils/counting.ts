@@ -315,7 +315,7 @@ export function getNextCount(count: number, mode: CountingMode): number {
         return count + 2;
       }
 
-      return count + stepSize;
+      return Math.floor(count / stepSize) * stepSize + stepSize;
     }
   }
 }

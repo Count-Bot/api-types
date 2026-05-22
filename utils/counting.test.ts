@@ -69,10 +69,10 @@ describe('input form masks', () => {
     expect(DefaultCountInputFormMask).toBe(CountInputForm.PlainDecimal);
     expect(AllCountInputFormMask).toBe(
       CountInputForm.PlainDecimal |
-        CountInputForm.ReverseDecimal |
-        CountInputForm.Hex |
-        CountInputForm.Binary |
-        CountInputForm.Scientific,
+      CountInputForm.ReverseDecimal |
+      CountInputForm.Hex |
+      CountInputForm.Binary |
+      CountInputForm.Scientific,
     );
   });
 
@@ -157,11 +157,13 @@ describe('count movement', () => {
     expect(getExpectedCount(1, CountingMode.Even)).toBe(2);
     expect(getExpectedCount(2, CountingMode.Even)).toBe(4);
     expect(getExpectedCount(5, CountingMode.Five)).toBe(10);
+    expect(getExpectedCount(72, CountingMode.Five)).toBe(75);
     expect(getExpectedCount(11, CountingMode.Prime)).toBe(13);
   });
 
   it('moves forward by sequence positions', () => {
     expect(moveCountForward(15, CountingMode.Five, 3)).toBe(30);
+    expect(moveCountForward(72, CountingMode.Five, 1)).toBe(75);
     expect(moveCountForward(1, CountingMode.Even, 3)).toBe(6);
     expect(moveCountForward(11, CountingMode.Prime, 3)).toBe(19);
   });
