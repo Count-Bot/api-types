@@ -69,10 +69,10 @@ describe('input form masks', () => {
     expect(DefaultCountInputFormMask).toBe(CountInputForm.PlainDecimal);
     expect(AllCountInputFormMask).toBe(
       CountInputForm.PlainDecimal |
-      CountInputForm.ReverseDecimal |
-      CountInputForm.Hex |
-      CountInputForm.Binary |
-      CountInputForm.Scientific,
+        CountInputForm.ReverseDecimal |
+        CountInputForm.Hex |
+        CountInputForm.Binary |
+        CountInputForm.Scientific,
     );
   });
 

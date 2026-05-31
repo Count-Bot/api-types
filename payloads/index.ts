@@ -3,6 +3,7 @@ export * from './Channel.js';
 export * from './ChannelGoal.js';
 export * from './ChannelModifiers.js';
 export * from './Guild.js';
+export * from './GuildMember.js';
 export * from './Item.js';
 export * from './Summary.js';
 export * from './User.js';
