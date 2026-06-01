@@ -1,4 +1,4 @@
-export interface APICountingUserModifiers {
+export interface APIUserModifiers {
   userId: string;
   coins: {
     value: number;
